@@ -1,0 +1,103 @@
+/* reset.css
+   Inspired by Andy Bell's modern minimal reset
+   - normalize box-sizing
+   - remove default margins
+   - make images/media responsive
+   - sensible defaults for form elements
+   - prefers-reduced-motion support
+*/
+
+/* Box sizing and layout helpers */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins */
+:where(html, body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol, pre) {
+  margin: 0;
+}
+
+/* Set core defaults */
+html {
+  line-height: 1.5; /* Better default line-height */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make images, videos and svgs responsive */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve forms defaults */
+input, button, textarea, select {
+  font: inherit; /* Use font settings from body */
+}
+
+/* Remove animations for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Remove list styles where appropriate */
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+}
+
+/* Anchor defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Table defaults */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default button styles where desired (leave accessible focus) */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Headings: inherit font-weight behavior until you set your scale */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Make images inside buttons not overflow */
+button img {
+  display: inline-block;
+  max-width: none;
+}
+
+/* Utility: focus-visible fallback */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+/* Accessibility: ensure landmarks have visible focus when needed */
+[tabindex='-1']:focus {
+  outline: none;
+}
